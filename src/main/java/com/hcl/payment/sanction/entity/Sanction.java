@@ -3,6 +3,7 @@ package com.hcl.payment.sanction.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,20 +14,49 @@ import javax.persistence.Table;
 @Table(name = "t_sanction")
 public class Sanction {
     @Id
+    @Column(name = "transaction_id")
     private int transactionID;
+
+    @Column(name = "message_id")
     private int messageId;
+
+    @Column(name = "e2e_id")
     private int e2eId;
+
+    @Column(name = "debtor_account")
     private String debtorAccount;
+
+    @Column(name = "debtor_name")
     private String debtorName;
+
+    @Column(name = "debtor_address")
     private String debtorAddress;
+
+    @Column(name = "debtor_agentid")
     private String debtorAgentId;
+
+    @Column(name = "creditor_account")
     private String creditorAccount;
+
+    @Column(name = "creditor_name")
     private String creditorName;
+
+    @Column(name = "creditor_address")
     private String creditorAddress;
+
+    @Column(name = "creditor_agentid")
     private String creditorAgentId;
+
+    @Column(name = "payment_currency")
     private String paymentCurrency;
+
+    @Column(name = "payment_amount")
     private String paymentAmount;
+
+    @Column(name = "value_date")
     private String valueDate;
+
+    @Column(name = "remittance_info")
     private String remittanceInfo;
 
     public Sanction() {
@@ -40,7 +70,7 @@ public class Sanction {
         this.debtorName = debtorName;
         this.debtorAddress = debtorAddress;
         this.debtorAgentId = debtorAgentId;
-        this.creditorAccount = creditorAccount;
+//        this.creditorAccount = creditorAccount;
         this.creditorName = creditorName;
         this.creditorAddress = creditorAddress;
         this.creditorAgentId = creditorAgentId;
